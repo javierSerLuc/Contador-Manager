@@ -69,10 +69,10 @@
 
 .barra-busqueda{
   
-  border:0.2rem solid #D9D4FF;
-  border-radius: 50px;
-  width: 35rem;
-  height: 3.5rem;
+  border:0.2rem solid #D9D4FF !important;
+  border-radius: 50px !important;
+  width: 35rem !important;
+  height: 3.5rem !important;
   
   backdrop-filter: blur(21px);
   padding-left: 4.5rem;
@@ -81,7 +81,7 @@
   font-family: 'mononoki NF';
   font-style: normal;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 24px !important;
   line-height: 108px;
   
 }
@@ -95,7 +95,8 @@
 }
 
 .barra-busqueda:focus-visible{
-  outline: none;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 .icono-lupa{
