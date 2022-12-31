@@ -75,7 +75,7 @@
   height: 3.5rem !important;
   
   backdrop-filter: blur(21px);
-  padding-left: 4.5rem;
+  padding-left: 4.5rem !important;
   /* border-color: rgb(0, 206, 206); */
 
   font-family: 'mononoki NF';
@@ -100,7 +100,7 @@
 }
 
 .icono-lupa{
-  margin-top: 0.7rem;
+  margin-top: 0.9rem;
   margin-left: 1.3rem;
 }
 .tools{
@@ -111,4 +111,8 @@
   margin-bottom: 2rem;
   
   
+}
+
+.elemento-izq{
+  width: auto !important;
 }

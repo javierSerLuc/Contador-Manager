@@ -6,7 +6,7 @@ export const BarraBusqueda = () => {
     return (
         <article className='container-busqueda'>
             <InputGroup>
-                <InputLeftElement
+                <InputLeftElement className='elemento-izq' 
                     pointerEvents='none'
                     children={<HiOutlineSearch className='icono-lupa' size={"2.5rem"} />}
                 />
