@@ -20,10 +20,94 @@
   font-weight: 700;
   font-size: 96px;
   line-height: 108px;
-  position: absolute;
   
   background: radial-gradient(90.6% 5904.07% at 95.21% 50%, #FF37C7 0%, #FFBF1C 100%), #00000000;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+.boton-add{
+  background: #a10aff;
+  border-radius: 50px;
+  width: 18rem;
+  height: 3.5rem;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.boton-add:hover{
+  cursor: pointer;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+
+}
+
+.boton-add:hover .icono-add{
+  color:red;
+}
+
+.icono-add{
+  color:white;
+  float:left;
+  margin-left: 0.7rem;
+
+}
+
+.texto-add{
+  color: white;
+  font-family: 'mononoki NF';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 27px;
+  margin-right: 1rem;
+  margin-left:0.6rem;
+}
+
+.barra-busqueda{
+  
+  border:0.2rem solid #D9D4FF;
+  border-radius: 50px;
+  width: 35rem;
+  height: 3.5rem;
+  
+  backdrop-filter: blur(21px);
+  padding-left: 4.5rem;
+  /* border-color: rgb(0, 206, 206); */
+
+  font-family: 'mononoki NF';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 108px;
+  
+}
+.barra-busqueda::placeholder{
+  color: #D9D4FF;
+  font-family: 'mononoki NF';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 108px;
+}
+
+.barra-busqueda:focus-visible{
+  outline: none;
+}
+
+.icono-lupa{
+  margin-top: 0.7rem;
+  margin-left: 1.3rem;
+}
+.tools{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  
+  
 }
