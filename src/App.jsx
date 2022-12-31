@@ -2,6 +2,8 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
 import { Titulo } from './components/Titulo'
+import { BotonADD } from './components/BotonADD'
+import { BarraBusqueda } from './components/BarraBusqueda'
 
 function App() {
 
@@ -12,7 +14,8 @@ function App() {
       </header>
       <main>
         <section className='tools'>
-
+            <BotonADD/>
+            <BarraBusqueda/>
         </section>
       </main>
 
