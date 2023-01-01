@@ -4,7 +4,9 @@
   /* padding: 0 2rem 2rem 2rem; */
   text-align: center;
 }
-
+.morado{
+  background: #a10aff !important;
+}
 .App{
   background: radial-gradient(83.69% 83.69% at 54.41% 100%, rgba(189, 183, 255, 0.45) 0%, rgba(156, 148, 255, 0) 100%);
   width: 100%;
@@ -195,4 +197,16 @@
 .item-opcion {
  
   font-size: 1.3rem !important;
+}
+
+.fuente-letra{
+  font-family: 'mononoki NF' !important;
+  font-style: normal !important;
+}
+.negrita{
+  font-weight: 600 !important;
+}
+
+.negrita-suave{
+  font-weight: 500 !important;
 }

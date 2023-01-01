@@ -31,7 +31,7 @@ function App() {
     let url = "https://contador-manager-api.vercel.app/api/contador/listaContadores";
     let response = await fetch(url);
     let data = await response.json();
-    setContadores(data.contadores);
+    setContadores(data.contadores.reverse());
     setCargando(false);
   };
 

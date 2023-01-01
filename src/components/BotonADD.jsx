@@ -78,6 +78,7 @@ export const BotonADD = ({fetchContadores}) => {
     </Button>
 
     <Modal
+        className='fuente-letra'
         initialFocusRef={initialRef}
         finalFocusRef={finalRef}
         isOpen={isOpen}
@@ -85,17 +86,17 @@ export const BotonADD = ({fetchContadores}) => {
       >
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Create your account</ModalHeader>
+          <ModalHeader className='fuente-letra negrita'>Crear Contador</ModalHeader>
           <ModalCloseButton />
           <ModalBody pb={6}>
             <FormControl>
-              <FormLabel>First name</FormLabel>
-              <Input ref={initialRef} placeholder='First name' onChange={e => setNombreContador(e.currentTarget.value)} />
+              <FormLabel className='fuente-letra negrita-suave'>Nombre del contador</FormLabel>
+              <Input className='fuente-letra' ref={initialRef} placeholder='Nombre' onChange={e => setNombreContador(e.currentTarget.value)} />
             </FormControl>
 
             <FormControl mt={4}>
-                <FormLabel>Valor Inicial</FormLabel>
-                <NumberInput value={valorInicial} defaultValue={0} min={0} onChange={setValorInicial}>
+                <FormLabel className='fuente-letra negrita-suave'>Valor Inicial</FormLabel>
+                <NumberInput className='fuente-letra' value={valorInicial} defaultValue={0} min={0} onChange={setValorInicial}>
                     <NumberInputField  />
                         <NumberInputStepper>
                             <NumberIncrementStepper />
@@ -106,7 +107,7 @@ export const BotonADD = ({fetchContadores}) => {
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme='blue' onClick={crearBoton} mr={3}>
+            <Button colorScheme='blue' className='morado' onClick={crearBoton} mr={3}>
               Crear Contador
             </Button>
             <Button onClick={onClose}>Cancelar</Button>
