@@ -116,3 +116,76 @@
 .elemento-izq{
   width: auto !important;
 }
+
+.lista-contadores{
+  display: flex;
+  
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+
+  
+  padding: 0rem 7rem 0rem 7rem;
+
+}
+
+.contador{
+  height: 13.5rem;
+  background: #ffffff;
+  border-radius: 30px;
+  margin-bottom: 2rem;
+  width: 20rem;
+
+  border:0.2rem solid #D9D4FF !important;
+  font-family: 'mononoki NF';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px !important;
+  margin: 0 2rem 2rem 2rem;
+}
+
+.boton-incrementar{
+  background: #a10aff !important;
+  border-radius: 250px !important;
+  width: 4rem !important;
+  height: 4rem !important;
+}
+
+.botones-contador{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.numero-contador{
+  font-family: 'mononoki NF';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 34px !important;
+}
+
+.clearfix{
+  float:none;
+  clear:both;
+}
+
+.opciones-contador{
+  float: right;
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.datos-contador{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.titulo-contador{
+  margin-left: 0.5rem !important;
+
+}
