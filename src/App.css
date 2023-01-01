@@ -185,12 +185,15 @@
 
 .datos-contador{
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  margin-left:3rem;
 }
 
 .titulo-contador{
   margin-left: 0.5rem !important;
+  font-size: 24px;
+  font-weight: 600;
 
 }
 

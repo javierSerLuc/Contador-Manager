@@ -131,7 +131,7 @@ function App() {
                   </section>
 
                   <section className='botones-contador'>
-                    <Stack direction='row' spacing="2rem" align='center'>
+                    <Stack direction='row' spacing="3rem" align='center'>
                       <Button className='boton-incrementar'  colorScheme='purple' variant='ghost' onClick={()=>incrementarContador(index,"decrementar")}>
                          <AiOutlineMinus strokeWidth="100" size={"3.5rem"} color={"white"} />
                       </Button>
