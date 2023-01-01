@@ -68,6 +68,9 @@ export const BotonADD = ({fetchContadores}) => {
       })
     }
 
+    setNombreContador("");
+    setValorInicial(0);
+
   }
 
   return (
