@@ -6,8 +6,9 @@ import { BarraBusqueda } from './components/BarraBusqueda'
 
 import { Spinner } from '@chakra-ui/react'
 import { Button,Stack,Image } from '@chakra-ui/react'
+import { MenuButton,Menu,MenuList,MenuItem,IconButton  } from '@chakra-ui/react'
 
-import { BsList } from "react-icons/bs";
+import { BsList,BsTrash } from "react-icons/bs";
 import { BsBoxArrowUpRight } from "react-icons/bs";
 
 import { AiOutlinePlus } from "react-icons/ai";
@@ -66,9 +67,28 @@ function App() {
 
     }
     let response = await fetch(url, opciones);
-    //console.log(url);
 
   }
+
+  const borrarContador = async (i) => {
+    
+
+    let contadoresTemp = [...contadores];
+    contadoresTemp.splice(i,1);
+    
+    
+
+    let url = "https://contador-manager-api.vercel.app/api/contador/eliminar/" + contadores[i]._id;
+    const opciones = {
+      method: 'DELETE',
+      headers:{
+        'Content-Type': 'application/json'
+      }
+    }
+    setContadores(contadoresTemp);
+    let response = await fetch(url, opciones);
+    
+  };
 
 
 
@@ -88,9 +108,17 @@ function App() {
             : contadores.map((contador, index) => {
               return (
                 <article className='contador' key={index}>
-                  <Button className='opciones-contador' colorScheme='gray' variant='ghost'>
-                     <BsList size={"2.5rem"} color={"gray"} />
-                  </Button>
+                  <Menu className='opciones-contador'>
+                    {/* <MenuButton className='opciones-contador' colorScheme='gray' variant='ghost'>
+                       <BsList size={"2.5rem"} color={"gray"} />
+                    </MenuButton> */}
+                    <MenuButton className='opciones-contador' as={IconButton} aria-label='Options' icon={<BsList size={"2.5rem"} color={"gray"} />} variant='ghost'/>
+                    <MenuList>
+                      <MenuItem icon={<BsList color={"gray"}  />}><span className="item-opcion">Editar nombre</span></MenuItem>
+                      <MenuItem onClick={() => borrarContador(index)} icon={<BsTrash color={"red"}   />}><span className="item-opcion">Borrar</span></MenuItem>
+                      
+                    </MenuList>
+                  </Menu>
                   <ClearFix/>
 
                   <section className='datos-contador'>
