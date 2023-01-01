@@ -10,7 +10,7 @@ import { useDisclosure} from '@chakra-ui/react'
 
 /* */
 
-export const BotonADD = () => {
+export const BotonADD = ({fetchContadores}) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   const initialRef = React.useRef(null)
@@ -45,6 +45,7 @@ export const BotonADD = () => {
 
     try{
       const peticion = await fetch('https://contador-manager-api-javierserluc.vercel.app/api/contador/crear', opciones);
+      fetchContadores();
       return(
       toast({
         title: "Contador creado",
@@ -54,6 +55,7 @@ export const BotonADD = () => {
         isClosable: true
       })
       )
+      
     }
     catch(error){
       console.log('BotonADD: crearBoton: error: ', error);

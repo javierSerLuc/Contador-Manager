@@ -25,6 +25,8 @@ function App() {
   }, [])
 
   const fetchContadores = async () => {
+
+    setCargando(true);
     
     let url = "https://contador-manager-api.vercel.app/api/contador/listaContadores";
     let response = await fetch(url);
@@ -99,7 +101,7 @@ function App() {
         </header>
         <main>
           <section className='tools'>
-            <BotonADD />
+            <BotonADD fetchContadores={fetchContadores} />
             <BarraBusqueda />
           </section>
           <section className='lista-contadores'>
