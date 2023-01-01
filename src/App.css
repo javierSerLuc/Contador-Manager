@@ -213,3 +213,42 @@
 .negrita-suave{
   font-weight: 500 !important;
 }
+
+
+
+
+/************************************************************************/
+
+@media (max-width: 856px){
+  .gradient-h1{
+    height: auto;
+  }
+
+  .tools{
+    flex-wrap: wrap;
+    margin-top: 3rem;
+  }
+  
+  .boton-add{
+    flex-grow: 1;
+    margin-bottom: 2rem;
+    margin-left: 15rem;
+    margin-right: 15rem;
+  }
+  .barra-busqueda{
+    width: 20rem;
+    margin: 0 auto;
+  }
+
+  .contador{
+    width: 15rem;
+  }
+
+  .boton-incrementar{
+    width: 3rem !important;
+    height: 3rem !important;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+}
