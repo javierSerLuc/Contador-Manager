@@ -24,12 +24,51 @@ function App() {
   }, [])
 
   const fetchContadores = async () => {
+    
     let url = "https://contador-manager-api.vercel.app/api/contador/listaContadores";
     let response = await fetch(url);
     let data = await response.json();
     setContadores(data.contadores);
     setCargando(false);
   };
+
+  const incrementarContador = async (i,tipo) => {
+    let url = "https://contador-manager-api.vercel.app/api/contador/";
+    const opciones = {
+      method: 'PUT',
+      headers:{
+        'Content-Type': 'application/json'
+      }
+    }
+    
+    
+    let contadoresTemp = [...contadores];
+    
+
+    if(tipo ==="decrementar" && i >= 0 && i < contadores.length){
+      if(contadores[i].valor > 0){
+
+        contadoresTemp[i].valor--;
+        setContadores(contadoresTemp);
+
+        url = url + "decrementar/" + contadores[i]._id;
+        
+      }
+    
+
+    }
+    else{
+        contadoresTemp[i].valor++;
+        setContadores(contadoresTemp);
+
+        url = url + "incrementar/" + contadores[i]._id;
+        
+
+    }
+    let response = await fetch(url, opciones);
+    //console.log(url);
+
+  }
 
 
 
@@ -63,12 +102,12 @@ function App() {
 
                   <section className='botones-contador'>
                     <Stack direction='row' spacing="2rem" align='center'>
-                      <Button className='boton-incrementar'  colorScheme='purple' variant='ghost'>
-                         <AiOutlineMinus stroke-width="100" size={"3.5rem"} color={"white"} />
+                      <Button className='boton-incrementar'  colorScheme='purple' variant='ghost' onClick={()=>incrementarContador(index,"decrementar")}>
+                         <AiOutlineMinus strokeWidth="100" size={"3.5rem"} color={"white"} />
                       </Button>
                       <p className='numero-contador'>{contador.valor}</p>
-                      <Button  className='boton-incrementar' colorScheme='purple' variant='ghost'>
-                         <AiOutlinePlus stroke-width="100" size={"3.5rem"} color={"white"} />
+                      <Button  className='boton-incrementar' colorScheme='purple' variant='ghost' onClick={() => incrementarContador(index,"incrementar")}>
+                         <AiOutlinePlus strokeWidth="100" size={"3.5rem"} color={"white"} />
                       </Button>
                     </Stack>
                   </section>
