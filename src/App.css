@@ -252,3 +252,46 @@
   }
   
 }
+@media (max-width: 350px){
+  .gradient-h1{
+    height: auto;
+    font-size: 70px;
+  }
+
+  .tools{
+    flex-wrap: wrap;
+    margin-top: 3rem;
+  }
+  
+  .boton-add{
+    flex-grow: 1;
+    margin-bottom: 2rem;
+    margin-left: 15rem;
+    margin-right: 15rem;
+  }
+  .container-busqueda{
+    width: 18rem;
+    margin: 0 auto;
+  }
+
+  .contador{
+    width: 15rem;
+  }
+  .botones-contador{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .boton-incrementar{
+    width: 3rem !important;
+    height: 3rem !important;
+    
+  }
+  .barra-busqueda::placeholder{
+    font-size: 21px;
+  }
+  .titulo-contador{
+    font-size: 21px;
+  }
+  
+}
