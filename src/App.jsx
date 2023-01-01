@@ -10,6 +10,7 @@ import { MenuButton,Menu,MenuList,MenuItem,IconButton  } from '@chakra-ui/react'
 
 import { BsList,BsTrash } from "react-icons/bs";
 import { BsBoxArrowUpRight } from "react-icons/bs";
+import { BiEditAlt } from "react-icons/bi";
 
 import { AiOutlinePlus } from "react-icons/ai";
 import { AiOutlineMinus } from "react-icons/ai";
@@ -116,7 +117,7 @@ function App() {
                     </MenuButton> */}
                     <MenuButton className='opciones-contador' as={IconButton} aria-label='Options' icon={<BsList size={"2.5rem"} color={"gray"} />} variant='ghost'/>
                     <MenuList>
-                      <MenuItem icon={<BsList color={"gray"}  />}><span className="item-opcion">Editar nombre</span></MenuItem>
+                      <MenuItem icon={<BiEditAlt color={"gray"}  />}><span className="item-opcion">Editar nombre</span></MenuItem>
                       <MenuItem onClick={() => borrarContador(index)} icon={<BsTrash color={"red"}   />}><span className="item-opcion">Borrar</span></MenuItem>
                       
                     </MenuList>
