@@ -30,11 +30,12 @@
 }
 
 .boton-add{
-  background: #a10aff;
-  border-radius: 50px;
-  width: 18rem;
-  height: 3.5rem;
-  border: none;
+  background: #a10aff !important;
+  border-radius: 50px !important;
+  /* width: 18rem !important; */
+  min-width: 18rem !important;
+  height: 3.5rem !important;
+  border: none !important;
   display: flex;
   justify-content: center;
   align-items: center;

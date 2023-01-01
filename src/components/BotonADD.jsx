@@ -1,12 +1,36 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { HiOutlineDocumentPlus } from "react-icons/hi2";
 import { useToast } from '@chakra-ui/react'
 
+/* */
+import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, Button } from "@chakra-ui/react"
+import { FormControl,FormLabel,Input } from '@chakra-ui/react';
+import { NumberIncrementStepper,NumberDecrementStepper,NumberInputStepper,NumberInputField,NumberInput } from '@chakra-ui/react';
+import { useDisclosure} from '@chakra-ui/react'
+
+/* */
+
 export const BotonADD = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure()
+
+  const initialRef = React.useRef(null)
+  const finalRef = React.useRef(null)
+
+  const [nombreContador, setNombreContador] = useState("");
+  const [valorInicial, setValorInicial] = useState(0);
 
   const toast = useToast();
 
+
+
   const crearBoton = async () => {
+    
+    
+    onClose();
+    let vl = valorInicial;
+    if(valorInicial < 0){
+      vl = 0;
+    }
 
     const opciones = {
       method: 'POST',
@@ -14,7 +38,8 @@ export const BotonADD = () => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        nombre: 'Contador-Prueba',
+        nombre: nombreContador,
+        valor:vl
       })
     }
 
@@ -44,10 +69,51 @@ export const BotonADD = () => {
   }
 
   return (
-    <button className='boton-add' onClick={crearBoton}>
+    <>
+    <Button className='boton-add' onClick={onOpen}>
       <HiOutlineDocumentPlus className='icono-add' size={"2.5rem"} />
       <h2 className='texto-add'>Nuevo Contador</h2>
-    </button>
+    </Button>
+
+    <Modal
+        initialFocusRef={initialRef}
+        finalFocusRef={finalRef}
+        isOpen={isOpen}
+        onClose={onClose}
+      >
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Create your account</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody pb={6}>
+            <FormControl>
+              <FormLabel>First name</FormLabel>
+              <Input ref={initialRef} placeholder='First name' onChange={e => setNombreContador(e.currentTarget.value)} />
+            </FormControl>
+
+            <FormControl mt={4}>
+                <FormLabel>Valor Inicial</FormLabel>
+                <NumberInput value={valorInicial} defaultValue={0} min={0} onChange={setValorInicial}>
+                    <NumberInputField  />
+                        <NumberInputStepper>
+                            <NumberIncrementStepper />
+                            <NumberDecrementStepper />
+                         </NumberInputStepper>
+                </NumberInput>
+            </FormControl>
+          </ModalBody>
+
+          <ModalFooter>
+            <Button colorScheme='blue' onClick={crearBoton} mr={3}>
+              Crear Contador
+            </Button>
+            <Button onClick={onClose}>Cancelar</Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
+    </>
+
+    
     
   )
 }
